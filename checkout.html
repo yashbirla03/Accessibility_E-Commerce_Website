@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FlowCart - Checkout</title>
+    <!-- Google Fonts: Outfit for modern, premium look -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <a href="#main-content" class="sr-only sr-focusable">Skip to main content</a>
+
+    <!-- Top Announcement Bar -->
+    <div class="top-bar">
+        <div class="top-bar-container container">
+            <div class="top-bar-left">
+                <span class="perk"><i class="fa-solid fa-truck-fast" aria-hidden="true"></i> Free shipping</span>
+                <span class="perk"><i class="fa-solid fa-shield-check" aria-hidden="true"></i> Delivery guarantee</span>
+            </div>
+            <div class="top-bar-right">
+                <a href="#" class="top-link"><i class="fa-solid fa-mobile-screen" aria-hidden="true"></i> Get the APP</a>
+                <a href="#" class="top-link">Returns</a>
+                <button class="lang-currency" aria-label="Change language and currency settings">
+                    <img src="https://flagcdn.com/w20/us.png" alt="United States Flag" class="flag-icon"> 
+                    <span>English</span> / <span>USD</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Header -->
+    <header class="main-header">
+        <div class="header-container container">
+            <div class="logo">
+                <a href="index.html" aria-label="FlowCart Home">
+                    <h1>Flow<span>Cart</span></h1>
+                </a>
+            </div>
+
+            <div class="search-container">
+                <form class="search-form" id="search-form" aria-label="Product Search">
+                    <label for="search-input" class="sr-only">Search for products</label>
+                    <input type="text" id="search-input" placeholder="Search for lightning deals...">
+                    <button type="button" class="voice-search-btn" aria-label="Search by voice"><i class="fa-solid fa-microphone" aria-hidden="true"></i></button>
+                    <button type="submit" class="search-btn" aria-label="Submit Search"><i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i></button>
+                </form>
+            </div>
+
+            <div class="header-actions">
+                <a href="#" class="action-item">
+                    <i class="fa-regular fa-user" aria-hidden="true"></i>
+                    <div class="action-text">
+                        <span class="small-text">Sign In</span>
+                        <span class="main-text">Orders & Account</span>
+                    </div>
+                </a>
+                <a href="cart.html" class="action-item cart-action" aria-label="Shopping Cart">
+                    <div class="cart-icon-wrapper">
+                        <i class="fa-solid fa-cart-shopping" aria-hidden="true"></i>
+                        <span class="cart-badge" id="cart-count" aria-hidden="true">1</span>
+                        <span class="sr-only" aria-live="polite" id="cart-live-count">1 items in cart</span>
+                    </div>
+                    <span class="main-text">Cart</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation / Subheader -->
+    <nav class="sub-nav" aria-label="Main Categories">
+        <div class="container nav-container">
+            <ul class="nav-links">
+                <li><a href="index.html"><i class="fa-solid fa-bolt text-bolt" aria-hidden="true"></i> Lightning Deals</a></li>
+                <li><a href="index.html"><i class="fa-solid fa-tags text-tags" aria-hidden="true"></i> Clearance Deals</a></li>
+                <li><a href="index.html">Best Sellers</a></li>
+                <li><a href="index.html">Home & Garden</a></li>
+                <li><a href="index.html">Women's Clothing</a></li>
+                <li><a href="index.html">Men's Clothing</a></li>
+                <li><a href="index.html">Electronics</a></li>
+                <li><a href="index.html">Jewelry</a></li>
+            </ul>
+        </div>
+    </nav>
+    
+    <!-- Breadcrumb Navigation -->
+    <nav aria-label="Breadcrumb" class="breadcrumb-container container">
+        <ol class="breadcrumb" id="breadcrumb-list">
+            <li><a href="index.html" id="breadcrumb-home">Home</a></li>
+            <li><span aria-current="page">Checkout</span></li>
+        </ol>
+    </nav>
+
+    <!-- Checkout Main Content -->
+    <main id="main-content" class="checkout-page-content container">
+        
+        <div class="checkout-promo-alert bg-green text-green">
+            <span class="promo-text"><i class="fa-solid fa-check" aria-hidden="true"></i> Free shipping on all items of this order</span>
+        </div>
+
+        <div class="cart-layout">
+            <!-- Left Column: Checkout Modules -->
+            <div class="cart-items-col">
+                
+                <!-- Address Box -->
+                <div class="checkout-panel address-panel">
+                    <div class="panel-header separated">
+                        <h2>Shipping address</h2>
+                        <button class="text-btn text-muted open-modal-btn" aria-haspopup="dialog" id="change-address-btn">Change address <i class="fa-solid fa-chevron-right"></i></button>
+                    </div>
+                    <div class="address-content">
+                        <div class="address-card">
+                            <div class="address-details">
+                                <p class="address-name"><strong>Yash Birla</strong> <span class="text-muted">+44 7445 816693</span></p>
+                                <p class="address-loc">18 Leslie Rise, Tividale</p>
+                                <p class="address-loc">Oldbury, West Midlands B69 1LT, United Kingdom</p>
+                            </div>
+                            <button class="edit-icon-btn text-muted" aria-label="Edit address"><i class="fa-solid fa-arrow-up-right-from-square"></i></button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Items Block -->
+                <div class="checkout-panel items-panel">
+                    <div class="panel-header separated">
+                        <h2>Free shipping from FlowCart - Ships by air (1)</h2>
+                        <button class="text-btn text-muted">Details <i class="fa-solid fa-chevron-right"></i></button>
+                    </div>
+                    <div class="checkout-items-preview">
+                        <div class="checkout-item-mini" title="Waterproof Hiking Boots For Men Outdoor Trekking Shoes">
+                            <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=150&q=80" alt="Men's waterproof red running and hiking shoes, side profile view">
+                            <p class="mini-price">$36.80 <span class="old-price text-muted text-strikethrough" style="text-decoration: line-through; font-size: 0.75rem;">$110.00</span></p>
+                        </div>
+                    </div>
+                    
+                    <div class="checkout-gift-btn text-muted">
+                        <i class="fa-solid fa-gift"></i> Add a free gift message card <i class="fa-solid fa-chevron-right"></i>
+                    </div>
+
+                    <div class="shipping-info-block text-green">
+                        <p>Standard shipping: FREE, delivery: Arrives in UK in as little as 1 business day.</p>
+                        <p class="fast-ship"><i class="fa-solid fa-truck-fast"></i> Fastest delivery in 4 BUSINESS DAYS <i class="fa-solid fa-chevron-right"></i></p>
+                    </div>
+                </div>
+                
+
+
+                <!-- Payment Methods -->
+                <div class="checkout-panel payment-methods-panel">
+                    <div class="payment-options" style="padding: 24px;">
+                        
+                        <!-- Option 1: Payment Methods -->
+                        <label class="payment-option" style="padding: 0; margin-bottom: 24px; align-items: flex-start; cursor: pointer;">
+                            <input type="radio" name="payment_main_category" value="methods" checked>
+                            <span class="custom-radio" style="margin-top: 2px;"></span>
+                            <div style="flex: 1;">
+                                <h2 class="section-title mb-3" style="font-size: 1.1rem; color: #444; margin-top: 0; display: flex; align-items: center;">
+                                    1. Payment methods 
+                                    <button type="button" class="text-primary" style="margin-left: 10px; font-size: 0.8rem; background: none; border: none; font-weight: bold; text-decoration: underline; cursor: pointer;" aria-expanded="false" onclick="const t = document.getElementById('cvv-tooltip'); t.style.display = t.style.display === 'none' ? 'block' : 'none'; this.setAttribute('aria-expanded', t.style.display === 'block');">What is CVV?</button>
+                                </h2>
+                                <div id="cvv-tooltip" style="display:none; background: #e8f5e9; border: 1px solid #2e7d32; padding: 10px; border-radius: 4px; font-size: 0.85rem; color: #2e7d32; margin-bottom: 12px; font-weight: 500;">
+                                    <strong>CVV Help:</strong> For Visa/Mastercard, the 3-digit CVV is printed on the back. For American Express, the 4-digit CVV is on the front.
+                                </div>
+                                <div class="payment-group">
+                                    <div class="payment-logos" style="flex-wrap: wrap; margin-bottom: 12px; gap: 8px;">
+                                        <span class="payment-badge"><span style="font-weight: bold; font-style: italic; font-size: 13px; font-family: Arial, sans-serif; letter-spacing: -0.5px;"><span style="color: #003087;">Pay</span><span style="color: #179BD7;">Pal</span></span></span>
+                                        <span class="payment-badge"><span style="font-family: Arial, sans-serif; font-weight: 900; font-style: italic; color: #1434CB; font-size: 14px; letter-spacing: -0.5px;">VISA</span></span>
+                                        <span class="payment-badge"><div style="display: flex; align-items: center;"><div style="width: 14px; height: 14px; background: #EB001B; border-radius: 50%; opacity: 0.9; margin-right: -4px; z-index: 2;"></div><div style="width: 14px; height: 14px; background: #FF5F00; border-radius: 50%; opacity: 0.9; z-index: 1;"></div></div></span>
+                                        <span class="payment-badge"><div style="background-color: #2E77BC; color: white; border-radius: 2px; padding: 1px 2px; font-weight: 800; font-family: Arial, sans-serif; font-size: 6px; text-align: center; line-height: 1.1; letter-spacing: 0.5px;">AMERICAN<br>EXPRESS</div></span>
+                                        <span class="payment-badge"><span style="font-weight: 800; font-family: Arial, sans-serif; color: black; font-size: 10px; letter-spacing:-0.5px;">DISC<span style="display:inline-block; width:9px; height:9px; background: linear-gradient(135deg, #F58220, #F58220); border-radius: 50%; margin: 0 -1px; transform: translateY(1px);"></span>VER</span></span>
+                                        <span class="payment-badge"><div style="display: flex; align-items: center;"><div style="width: 14px; height: 14px; background: #0064CB; border-radius: 50%; opacity: 0.9; margin-right: -4px; z-index: 2;"></div><div style="width: 14px; height: 14px; background: #CC0000; border-radius: 50%; opacity: 0.9; z-index: 1;"></div></div></span>
+                                        <span class="payment-badge"><div style="display: flex; align-items: center; gap: 2px;"><div style="width:12px; height:12px; border-radius:50%; background: #004b8b; position:relative;"><div style="width:5px; height:5px; border-radius:50%; background: white; border-left:2px solid #004b8b; position:absolute; top:3px; left:3px; transform:rotate(-15deg);"></div></div><div style="font-size:5px; line-height:1.1; font-weight:bold; color:#004b8b; font-family: Arial, sans-serif; text-align:left;">Diners Club<br><span style="font-size:3px; color:#555;">INTERNATIONAL</span></div></div></span>
+                                    </div>
+                                </div>
+                                
+                                <div class="payment-group">
+                                    <div class="payment-logos" style="flex-wrap: wrap; gap: 8px;">
+                                        <span class="payment-badge"><div style="display:flex; gap:1px;"><span style="color:white; background:#005A9c; padding:0 2px; border-radius:1px; font-size:7px; font-weight:bold; font-family:sans-serif;">J</span><span style="color:white; background:#E11A27; padding:0 2px; border-radius:1px; font-size:7px; font-weight:bold; font-family:sans-serif;">C</span><span style="color:white; background:#1E9022; padding:0 2px; border-radius:1px; font-size:7px; font-weight:bold; font-family:sans-serif;">B</span></div></span>
+                                        <span class="payment-badge"><span style="font-weight:600; font-family: Arial, sans-serif; font-size:11px; color:black; display:flex; align-items:center;"><i class="fa-brands fa-apple" style="font-size:13px; margin-right:1px; transform:translateY(-1px);"></i>Pay</span></span>
+                                        <span class="payment-badge clearpay" style="font-weight: 800; font-size: 10px; letter-spacing:-0.5px;">clearpay<i class="fa-solid fa-arrows-turn-right" style="font-size: 8px; margin-left: 2px;"></i></span>
+                                        <span class="payment-badge klarna" style="font-weight: 800; font-size: 11px;">Klarna.</span>
+                                        <span class="payment-badge"><span style="font-weight:500; font-family: Arial, sans-serif; font-size:11px; color:#5f6368; display:flex; align-items:center;"><svg width="12" height="12" viewBox="0 0 24 24" style="margin-right:2px; transform:translateY(-1px);"><path fill="#4285F4" d="M21.35,11.1H12.18V13.83H18.69C18.36,17.64 15.19,19.27 12.19,19.27C8.36,19.27 5,16.25 5,12C5,7.9 8.2,4.73 12.2,4.73C15.29,4.73 17.1,6.7 17.1,6.7L19,4.72C19,4.72 16.56,2 12.1,2C6.42,2 2.03,6.8 2.03,12C2.03,17.05 6.36,22 12.22,22C17.05,22 21.51,18.33 21.51,12.27C21.51,11.88 21.43,11.45 21.35,11.1V11.1Z"/></svg>Pay</span></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </label>
+
+                        <!-- Option 2: Security Certification -->
+                        <label class="payment-option" style="padding: 24px 0 0 0; border-top: 1px solid var(--border); align-items: flex-start; cursor: pointer;">
+                            <input type="radio" name="payment_main_category" value="security">
+                            <span class="custom-radio" style="margin-top: 2px;"></span>
+                            <div style="flex: 1;">
+                                <h2 class="section-title mb-3" style="font-size: 1.1rem; color: #444; margin-top: 0;">2. Security certification</h2>
+                                <div class="payment-logos">
+                                    <span class="payment-badge" style="width: 70px; height: 38px; padding: 4px;"><span style="font-weight:900; color:#0e885c; font-family: Arial, sans-serif; font-size:14px; line-height:1; display:flex; align-items:center; letter-spacing:-1px;">PCI<span style="font-size:6px; color:black; letter-spacing:0; margin-left:2px; display:inline-block; line-height: 1.1;">DSS<br><span style="font-size:4px; font-weight:normal;">COMPLIANT</span></span></span></span>
+                                    <span class="payment-badge" style="width: 60px; height: 38px; display:flex; flex-direction:column; justify-content:center; gap:2px;"><span style="font-family: Arial, sans-serif; font-weight: 900; font-style: italic; color: #1434CB; font-size: 13px; line-height:1; text-align: center;">VISA</span><div style="font-size:5px; font-family: Arial, sans-serif; font-weight:bold; background:#1434CB; color:white; width:90%; text-align:center; padding:1px 0; margin-left: 5%;">SECURE</div></span>
+                                    <span class="payment-badge" style="width: 90px; height: 38px;"><div style="display: flex; align-items: center;"><div style="width: 14px; height: 14px; background: #EB001B; border-radius: 50%; opacity: 0.9; margin-right: -4px; z-index: 2;"></div><div style="width: 14px; height: 14px; background: #FF5F00; border-radius: 50%; opacity: 0.9; z-index: 1;"></div></div> <span style="font-size:8px; font-family: Arial, sans-serif; color:#666; margin-left:6px; border-left:1px solid #ccc; padding-left:6px;">ID Check</span></span>
+                                    <span class="payment-badge" style="width: 90px; height: 38px;"><div style="background-color: #2E77BC; color: white; border-radius: 2px; padding: 1px 2px; font-weight: 800; font-family: Arial, sans-serif; font-size: 5px; text-align: center; line-height: 1.1; letter-spacing: 0px;">AMERICAN<br>EXPRESS</div> <span style="font-size:9px; font-family: Arial, sans-serif; color:#444; margin-left:6px; font-weight:600;">SafeKey<sup style="font-size:4px;">®</sup></span></span>
+                                </div>
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Sidebar: Summary -->
+            <div class="order-summary-col">
+                <aside class="order-summary-box">
+                    <h2>Order Summary</h2>
+                    <div class="summary-details">
+                        <div class="summary-row">
+                            <span id="summary-item-count">Item total (1)</span>
+                            <span id="summary-item-total">$51.52</span>
+                        </div>
+                        <div class="summary-row">
+                            <span>Store discount</span>
+                            <span class="text-primary" id="summary-discount">-$14.72</span>
+                        </div>
+                    </div>
+                    
+                    <div class="summary-total-container">
+                        <div class="summary-total">
+                            <span class="total-label">Subtotal</span>
+                            <div class="total-price-box">
+                                <span class="currency">US $</span>
+                                <span class="total-price" id="summary-subtotal">36.80</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <p class="summary-tax-info">Price shown before tax. Free shipping triggered.</p>
+                    
+                    <a href="#" class="checkout-btn btn-primary" id="checkout-btn" aria-haspopup="dialog" aria-controls="order-confirmation-modal" style="text-align: center; justify-content: center; width: 100%; display: flex;">Order and Pay (1)</a>
+                    
+                    <div class="express-checkout-divider">
+                        <hr>
+                        <span>Or</span>
+                    </div>
+
+                    <button class="paypal-btn" aria-label="Pay with PayPal">
+                        <span>Express checkout with </span> <strong>PayPal</strong>
+                    </button>
+
+                    <p class="crypto-note">All your personal information is protected and encrypted.</p>
+
+                    <div class="trust-guarantees">
+                        <div class="trust-item">
+                            <i class="fa-solid fa-shield-check text-green"></i> <strong>Safe payments</strong>
+                            <p>Your payment information is processed securely. We do not store credit card details.</p>
+                        </div>
+                        <div class="trust-item">
+                            <i class="fa-solid fa-box-open text-green"></i> <strong>Delivery Guarantee</strong>
+                            <p>Fast, reliable shipping directly to your doorstep. Tracked instantly.</p>
+                        </div>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </main>
+
+    <!-- Snapshot 1: Address Modal Overlay -->
+    <div class="modal-overlay" id="address-modal" aria-hidden="true">
+        <div class="modal-dialog" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+            <div class="modal-header">
+                <button class="modal-back-btn text-muted" aria-label="Go back" style="min-width: 44px; min-height: 44px; display: inline-flex; align-items: center; justify-content: center;"><i class="fa-solid fa-chevron-left"></i> Back</button>
+                <div class="title-wrap text-center flex-grow-1">
+                    <h2 id="modal-title" style="font-size: 1.2rem; font-weight: 700; margin:0;">Add a new address</h2>
+                    <p class="safeguard-text" style="color: #2e7d32; font-size: 0.8rem; margin: 4px 0 0 0;"><i class="fa-solid fa-lock"></i> All data is safeguarded</p>
+                </div>
+                <button class="modal-close-btn" aria-label="Close modal" style="min-width: 44px; min-height: 44px; display: inline-flex; align-items: center; justify-content: center;"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            
+            <div class="modal-body" style="padding: 24px; max-height: 70vh; overflow-y: auto;">
+                <form id="new-address-form">
+                    <div class="form-group mb-4">
+                        <label for="country-select" style="font-size: 0.85rem; font-weight: 600;">Country / Region <span class="text-primary">*</span></label>
+                        <div class="custom-select-wrapper mt-1">
+                            <select id="country-select" class="form-control" required style="width: 100%; padding: 12px; border: 1px solid var(--border); border-radius: 4px;">
+                                <option value="UK" selected>United Kingdom</option>
+                                <option value="US">United States</option>
+                                <option value="CA">Canada</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group mb-4">
+                        <label for="first-name" style="font-size: 0.85rem; font-weight: 600;">First Name <span class="text-primary">*</span></label>
+                        <p class="help-text text-muted" style="font-size: 0.8rem; margin: 4px 0 4px 0;">Enter your legal first name.</p>
+                        <input type="text" id="first-name" class="form-control mt-1 validate-req" required style="width: 100%; padding: 12px; border: 1px solid var(--border); border-radius: 4px;">
+                        <span class="error-msg" style="display:none; color: #d32f2f; font-size: 0.8rem; margin-top: 4px; font-weight: bold;"><i class="fa-solid fa-circle-exclamation"></i> First name is required.</span>
+                    </div>
+
+                    <div class="form-group mb-4">
+                        <label for="last-name" style="font-size: 0.85rem; font-weight: 600;">Last Name <span class="text-primary">*</span></label>
+                        <p class="help-text text-muted" style="font-size: 0.8rem; margin: 4px 0 4px 0;">Enter your family name.</p>
+                        <input type="text" id="last-name" class="form-control mt-1 validate-req" required style="width: 100%; padding: 12px; border: 1px solid var(--border); border-radius: 4px;">
+                        <span class="error-msg" style="display:none; color: #d32f2f; font-size: 0.8rem; margin-top: 4px; font-weight: bold;"><i class="fa-solid fa-circle-exclamation"></i> Last name is required.</span>
+                    </div>
+
+                    <div class="form-group mb-4">
+                        <label for="phone-number" style="font-size: 0.85rem; font-weight: 600;">Phone number <span class="text-primary">*</span></label>
+                        <p class="help-text text-muted" style="font-size: 0.8rem; margin: 4px 0 4px 0;">Enter a 10-digit number without dashes.</p>
+                        <div class="phone-input-group mt-1" style="display: flex;">
+                            <select id="country-code" class="form-control phone-prefix" aria-label="Country Code" style="padding: 12px; border: 1px solid var(--border); border-radius: 4px 0 0 4px; border-right: none; background: #f9f9f9;">
+                                <option value="+44">UK +44</option>
+                                <option value="+1">US +1</option>
+                            </select>
+                            <input type="tel" id="phone-number" class="form-control phone-body validate-req" placeholder="Enter a 10-digit number" required style="flex:1; padding: 12px; border: 1px solid var(--border); border-radius: 0 4px 4px 0;" aria-invalid="false">
+                        </div>
+                        <span class="error-msg" style="display:none; color: #d32f2f; font-size: 0.8rem; margin-top: 4px; font-weight: bold;"><i class="fa-solid fa-circle-exclamation"></i> Phone number is required.</span>
+                        <small class="mt-2 block" style="display:block; color: #2e7d32; font-size:0.75rem;"><i class="fa-solid fa-shield-check"></i> This is only used for deliveries and will be kept secure.</small>
+                    </div>
+
+                    <div class="form-group mb-4">
+                        <label for="address-search" style="font-size: 0.85rem; font-weight: 600;">Address search</label>
+                        <p class="help-text text-muted" style="font-size: 0.8rem; margin: 4px 0 8px 0;">Enter your postcode, street, or house number to find your full address.</p>
+                        <div class="search-input-wrapper" style="position: relative;">
+                            <i class="fa-solid fa-magnifying-glass search-icon" style="position: absolute; left: 12px; top: 16px; color: var(--text-muted);"></i>
+                            <input type="text" id="address-search" class="form-control" placeholder="Search by address or postcode" style="width: 100%; padding: 12px 12px 12px 36px; border: 1px solid var(--border); border-radius: 4px;">
+                        </div>
+                        <button type="button" class="text-btn text-primary mt-3" style="font-size:0.85rem; font-weight:600; background:none; border:none; cursor:pointer;">Enter address manually <i class="fa-solid fa-chevron-down"></i></button>
+                    </div>
+                </form>
+            </div>
+            
+            <div class="modal-footer" style="padding: 24px; border-top: 1px solid var(--border); display: flex; flex-direction: column; align-items: center; gap: 12px;">
+                <div class="delivery-badge" style="background-color: #e8f5e9; color: #2e7d32; font-size: 0.85rem; padding: 6px 16px; border-radius: 20px; font-weight: 600; width: fit-content;">
+                    <i class="fa-solid fa-truck-fast" style="margin-right: 6px;"></i> Fastest delivery in 2 business days
+                </div>
+                <button type="button" id="address-modal-submit" class="btn-primary btn-block modal-submit-btn" style="width: 100%; padding: 14px; border-radius: var(--radius-pill); font-size: 1.1rem; font-weight: bold; text-align: center; display: flex; justify-content: center;">
+                    Save and use
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 2. WCAG 3.3.6: Order Confirmation Modal -->
+    <div id="order-confirmation-modal" class="modal-overlay" aria-labelledby="confirm-modal-title" aria-modal="true" role="dialog" aria-hidden="true" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-header">
+                <h2 id="confirm-modal-title">Confirm Your Order</h2>
+                <button class="modal-close-btn confirm-close-btn" aria-label="Close modal"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            <div class="modal-body" style="padding: 24px;">
+                <p>Please confirm your order details below before you pay.</p>
+                <div style="background: #f9f9f9; padding: 16px; border-radius: 8px; margin-top: 16px; border: 1px solid var(--border);">
+                    <p><strong>Subtotal:</strong> $36.80</p>
+                    <p><strong>Shipping Speed:</strong> Fastest delivery in 2 business days</p>
+                    <hr style="margin: 12px 0; border-top: 1px solid var(--border);">
+                    <p style="font-size: 1.2rem; font-weight: bold;">Total to Pay: <span class="text-primary">$36.80</span></p>
+                </div>
+            </div>
+            <div class="modal-footer" style="padding: 24px; border-top: 1px solid var(--border); display: flex; gap: 12px;">
+                <button class="border-btn confirm-close-btn" style="flex: 1; padding: 12px; border-radius: 8px;">Cancel</button>
+                <button class="btn-primary" style="flex: 1; padding: 12px; border-radius: 8px; font-weight: bold;" onclick="alert('Order submitted securely!');">Confirm & Pay</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 3. WCAG 2.2.5: Session Expiry / OTP Modal -->
+    <div id="session-expiry-modal" class="modal-overlay" aria-labelledby="expiry-modal-title" aria-modal="true" role="dialog" aria-hidden="true" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-header">
+                <h2 id="expiry-modal-title" class="text-primary"><i class="fa-solid fa-lock"></i> Session Paused</h2>
+            </div>
+            <div class="modal-body" style="padding: 24px;">
+                <p>For your security, your checkout session has timed out due to inactivity.</p>
+                <p class="mt-2 text-muted">Please enter the 6-digit OTP sent to your registered email to resume exactly where you left off.</p>
+                
+                <div class="otp-input-group mt-4" style="display: flex; flex-direction: column; gap: 8px;">
+                    <label for="idle-otp" style="font-weight: 600;">Verification Code</label>
+                    <input type="text" id="idle-otp" class="form-control" placeholder="000000" maxlength="6" style="letter-spacing: 4px; font-size: 1.2rem; text-align: center; padding: 12px;">
+                </div>
+                
+                <p class="mt-3 text-center" style="font-size: 0.85rem;">Time remaining: <strong id="otp-timer">05:00</strong></p>
+            </div>
+            <div class="modal-footer" style="padding: 24px; border-top: 1px solid var(--border); display: flex; flex-direction: column; gap: 12px; align-items: center;">
+                <button class="btn-primary" style="width: 100%; padding: 12px; border-radius: 8px; font-weight: bold;" onclick="resumeSession()">Verify & Resume Session</button>
+                <button id="resend-otp-btn" class="text-primary" style="background: none; border: none; font-size: 0.85rem; font-weight: 600; cursor: pointer; text-decoration: underline;" onclick="resetOTP()">Resend OTP (Extends Session)</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Footer -->
+    <footer class="site-footer mt-5">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h2>Company Info</h2>
+                    <ul>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Press</a></li>
+                        <li><a href="#">Investor Relations</a></li>
+                        <li><a href="#">Site Map</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h2>Customer Service</h2>
+                    <ul>
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="#">Track Order</a></li>
+                        <li><a href="#">Returns & Refunds</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom" style="margin-top: 40px; border-top: 1px solid #444; padding-top: 20px;">
+                <p>&copy; 2026 FlowCart Inc. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Script to handle focus trapping natively inside the modal -->
+    <!-- Script to handle modals, focus trapping, and session timeouts natively -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const addressModal = document.getElementById('address-modal');
+            const confirmModal = document.getElementById('order-confirmation-modal');
+            const expiryModal = document.getElementById('session-expiry-modal');
+            
+            const openAddressBtns = document.querySelectorAll('.open-modal-btn');
+            const closeAddressBtns = document.querySelectorAll('.modal-close-btn, .modal-back-btn');
+            
+            const checkoutBtn = document.getElementById('checkout-btn');
+            const closeConfirmBtns = document.querySelectorAll('.confirm-close-btn');
+
+            const focusableElements = 'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])';
+            
+            let firstFocusableElement;
+            let lastFocusableElement;
+            let previouslyFocusedElement;
+
+            function openModal(modal) {
+                previouslyFocusedElement = document.activeElement;
+                modal.classList.add('show');
+                modal.setAttribute('aria-hidden', 'false');
+                document.body.style.overflow = 'hidden'; 
+                
+                const focusableContent = modal.querySelectorAll(focusableElements);
+                if(focusableContent.length > 0) {
+                    firstFocusableElement = focusableContent[0];
+                    lastFocusableElement = focusableContent[focusableContent.length - 1];
+                    firstFocusableElement.focus();
+                }
+            }
+
+            function closeModal(modal) {
+                modal.classList.remove('show');
+                modal.setAttribute('aria-hidden', 'true');
+                document.body.style.overflow = '';
+                if(previouslyFocusedElement) previouslyFocusedElement.focus();
+            }
+
+            // Address Modal Listeners
+            openAddressBtns.forEach(btn => btn.addEventListener('click', (e) => {
+                e.preventDefault();
+                openModal(addressModal);
+            }));
+            closeAddressBtns.forEach(btn => btn.addEventListener('click', () => closeModal(addressModal)));
+            addressModal.addEventListener('click', (e) => { if (e.target === addressModal) closeModal(addressModal); });
+
+            // Form Error Parsing (WCAG 3.3.1)
+            const addressSubmitBtn = document.getElementById('address-modal-submit');
+            addressSubmitBtn.addEventListener('click', (e) => {
+                e.preventDefault();
+                let hasError = false;
+                
+                // Select all required inputs injected with the tracking class
+                const reqInputs = document.querySelectorAll('#address-modal .validate-req');
+                reqInputs.forEach(input => {
+                    const val = input.value.trim();
+                    const container = input.closest('.form-group');
+                    const errorMsg = container.querySelector('.error-msg');
+                    
+                    if(val === '') {
+                        input.style.border = '2px solid #d32f2f'; // Red highlight border
+                        input.setAttribute('aria-invalid', 'true');
+                        if (errorMsg) errorMsg.style.display = 'block'; // Visually show the persistent text error
+                        hasError = true;
+                    } else {
+                        input.style.border = '1px solid var(--border)';
+                        input.setAttribute('aria-invalid', 'false');
+                        if (errorMsg) errorMsg.style.display = 'none';
+                    }
+                });
+
+                if(!hasError) {
+                    alert('Address saved securely. Return payload processed.');
+                    closeModal(addressModal);
+                }
+            });
+
+            // Confirm Modal Listeners
+            if (checkoutBtn) {
+                checkoutBtn.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    openModal(confirmModal);
+                });
+            }
+            closeConfirmBtns.forEach(btn => btn.addEventListener('click', () => closeModal(confirmModal)));
+            confirmModal.addEventListener('click', (e) => { if (e.target === confirmModal) closeModal(confirmModal); });
+
+            // Global Focus Trap for Active Modal
+            document.addEventListener('keydown', (e) => {
+                const activeModal = document.querySelector('.modal-overlay.show');
+                if (!activeModal) return;
+                
+                const isTabPressed = e.key === 'Tab' || e.keyCode === 9;
+                
+                if (e.key === 'Escape') {
+                    // Do not allow escaping the OTP expiry modal
+                    if (activeModal.id !== 'session-expiry-modal') {
+                        closeModal(activeModal);
+                    }
+                    return;
+                }
+
+                if (!isTabPressed) return;
+
+                if (e.shiftKey) { 
+                    if (document.activeElement === firstFocusableElement) {
+                        lastFocusableElement.focus();
+                        e.preventDefault();
+                    }
+                } else { 
+                    if (document.activeElement === lastFocusableElement) {
+                        firstFocusableElement.focus();
+                        e.preventDefault();
+                    }
+                }
+            });
+
+            // WCAG 2.2.5 Session Timeout Logic
+            let idleTimer;
+            const IDLE_TIMEOUT_MS = 30000; // 30 seconds idle trigger for this demonstration
+            
+            function resetIdleTimer() {
+                if(expiryModal.classList.contains('show')) return; // Don't reset if already expired
+                clearTimeout(idleTimer);
+                idleTimer = setTimeout(() => {
+                    openModal(expiryModal);
+                    startOTPTimer();
+                }, IDLE_TIMEOUT_MS);
+            }
+            
+            // Listen for user activity
+            ['mousemove', 'keydown', 'scroll', 'click', 'touchstart'].forEach(env => {
+                document.addEventListener(env, resetIdleTimer);
+            });
+            resetIdleTimer(); // Startup timeout tracking
+
+            // OTP Countdown Visualizer
+            let otpCountdown;
+            window.startOTPTimer = function() {
+                clearInterval(otpCountdown);
+                let time = 300; // 5 minutes
+                const timerEl = document.getElementById('otp-timer');
+                
+                otpCountdown = setInterval(() => {
+                    time--;
+                    let mins = Math.floor(time / 60);
+                    let secs = time % 60;
+                    timerEl.innerText = `${mins.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`;
+                    if (time <= 0) clearInterval(otpCountdown);
+                }, 1000);
+            };
+
+            window.resetOTP = function() {
+                alert("New OTP dispatched! Timer reset. Session saved.");
+                startOTPTimer();
+            };
+
+            window.resumeSession = function() {
+                const otpVal = document.getElementById('idle-otp').value;
+                if(otpVal.length === 6) {
+                    closeModal(expiryModal);
+                    document.getElementById('idle-otp').value = '';
+                    resetIdleTimer();
+                } else {
+                    alert("Please enter a valid 6-digit verification code to resume.");
+                }
+            };
+        });
+    </script>
+</body>
+</html>

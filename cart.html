@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FlowCart - Shopping Cart</title>
+    <meta name="description" content="Review your FlowCart shopping cart. Enjoy secure checkout with free shipping and delivery guarantees.">
+    <!-- Google Fonts: Outfit for modern, premium look -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <a href="#main-content" class="sr-only sr-focusable">Skip to main content</a>
+
+    <!-- Top Announcement Bar -->
+    <div class="top-bar">
+        <div class="top-bar-container container">
+            <div class="top-bar-left">
+                <span class="perk"><i class="fa-solid fa-truck-fast" aria-hidden="true"></i> Free shipping</span>
+                <span class="perk"><i class="fa-solid fa-shield-check" aria-hidden="true"></i> Delivery guarantee</span>
+            </div>
+            <div class="top-bar-right">
+                <a href="#" class="top-link"><i class="fa-solid fa-mobile-screen" aria-hidden="true"></i> Get the APP</a>
+                <a href="#" class="top-link">Returns</a>
+                <button class="lang-currency" aria-label="Change language and currency settings">
+                    <img src="https://flagcdn.com/w20/us.png" alt="United States Flag" class="flag-icon"> 
+                    <span>English</span> / <span>USD</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Header -->
+    <header class="main-header">
+        <div class="header-container container">
+            <div class="logo">
+                <a href="index.html" aria-label="FlowCart Home">
+                    <h1>Flow<span>Cart</span></h1>
+                </a>
+            </div>
+
+            <div class="search-container">
+                <form class="search-form" id="search-form" aria-label="Product Search">
+                    <label for="search-input" class="sr-only">Search for products</label>
+                    <input type="text" id="search-input" placeholder="Search for lightning deals...">
+                    <button type="button" class="voice-search-btn" aria-label="Search by voice"><i class="fa-solid fa-microphone" aria-hidden="true"></i></button>
+                    <button type="submit" class="search-btn" aria-label="Submit Search"><i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i></button>
+                </form>
+            </div>
+
+            <div class="header-actions">
+                <a href="#" class="action-item">
+                    <i class="fa-regular fa-user" aria-hidden="true"></i>
+                    <div class="action-text">
+                        <span class="small-text">Sign In</span>
+                        <span class="main-text">Orders & Account</span>
+                    </div>
+                </a>
+                <a href="cart.html" class="action-item cart-action" aria-label="Shopping Cart">
+                    <div class="cart-icon-wrapper">
+                        <i class="fa-solid fa-cart-shopping" aria-hidden="true"></i>
+                        <span class="cart-badge" id="cart-count" aria-hidden="true">1</span>
+                        <span class="sr-only" aria-live="polite" id="cart-live-count">1 items in cart</span>
+                    </div>
+                    <span class="main-text">Cart</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation / Subheader -->
+    <nav class="sub-nav" aria-label="Main Categories">
+        <div class="container nav-container">
+            <ul class="nav-links">
+                <li><a href="index.html"><i class="fa-solid fa-bolt text-bolt" aria-hidden="true"></i> Lightning Deals</a></li>
+                <li><a href="index.html"><i class="fa-solid fa-tags text-tags" aria-hidden="true"></i> Clearance Deals</a></li>
+                <li><a href="index.html">Best Sellers</a></li>
+                <li><a href="index.html">Home & Garden</a></li>
+                <li><a href="index.html">Women's Clothing</a></li>
+                <li><a href="index.html">Men's Clothing</a></li>
+                <li><a href="index.html">Electronics</a></li>
+                <li><a href="index.html">Jewelry</a></li>
+            </ul>
+        </div>
+    </nav>
+    
+    <!-- Breadcrumb Navigation -->
+    <nav aria-label="Breadcrumb" class="breadcrumb-container container">
+        <ol class="breadcrumb" id="breadcrumb-list">
+            <li><a href="index.html" id="breadcrumb-home">Home</a></li>
+            <li><span aria-current="page">Cart</span></li>
+        </ol>
+    </nav>
+
+    <!-- Cart Main Content -->
+    <main id="main-content" class="cart-page-content container">
+        <div class="cart-layout">
+            <!-- Left Column: Cart Items -->
+            <div class="cart-items-col">
+                <!-- Promo Alerts -->
+                <div class="cart-promo-alert">
+                    <span class="promo-text"><i class="fa-solid fa-check" aria-hidden="true"></i> Free shipping</span>
+                    <span class="promo-link"><a href="#" aria-label="Check free shipping details">Check details</a></span>
+                </div>
+                <div class="cart-promo-alert secondary">
+                    <span class="promo-text"><i class="fa-solid fa-arrow-rotate-left" aria-hidden="true"></i> 90 days free returns</span>
+                </div>
+
+                <!-- Cart Store Block -->
+                <div class="cart-store-block">
+                    <div class="store-header">
+                        <label class="custom-checkbox">
+                            <input type="checkbox" checked aria-label="Select all items from FlowCart Official Store">
+                            <span class="checkmark"></span>
+                        </label>
+                        <h3>FlowCart Official Store</h3>
+                        <a href="#" class="store-link" aria-label="Visit FlowCart Official Store">Visit store <i class="fa-solid fa-chevron-right" aria-hidden="true"></i></a>
+                    </div>
+                    
+                    <!-- Cart Item -->
+                    <div class="cart-item-card">
+                        <div class="item-selector">
+                            <label class="custom-checkbox">
+                                <input type="checkbox" checked aria-label="Select Waterproof Hiking Boots">
+                                <span class="checkmark"></span>
+                            </label>
+                        </div>
+                        <div class="item-img-box">
+                            <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=150&q=80" alt="Men's waterproof red running and hiking shoes, side profile view">
+                        </div>
+                        <div class="item-details">
+                            <h4 class="item-title"><a href="product-detail.html">Waterproof Hiking Boots For Men Outdoor Trekking Shoes</a></h4>
+                            <p class="item-variants">Color: Red | Size: 42</p>
+                            <p class="item-stock text-green">In Stock</p>
+                            <p class="item-shipping-info">Free shipping. Delivery by Apr 14-16.</p>
+                        </div>
+                        <div class="item-actions">
+                            <div class="item-price">
+                                <span class="current-price">$36.80</span>
+                                <span class="old-price">$110.00</span>
+                            </div>
+                            <div class="quantity-control-group">
+                                <div class="quantity-selector">
+                                    <button class="qty-btn btn-decrease" aria-label="Decrease quantity"><i class="fa-solid fa-minus" aria-hidden="true"></i></button>
+                                    <input type="text" class="cart-item-qty" value="1" aria-label="Quantity">
+                                    <button class="qty-btn btn-increase" aria-label="Increase quantity"><i class="fa-solid fa-plus" aria-hidden="true"></i></button>
+                                </div>
+                                <button class="delete-item-btn" aria-label="Remove item"><i class="fa-regular fa-trash-can" aria-hidden="true"></i></button>
+                            </div>
+                            <span class="qty-error" style="display:none; color: #d32f2f; font-size: 0.85rem; font-weight: 600; margin-top: 4px;"><i class="fa-solid fa-triangle-exclamation"></i> Max limit 1-99.</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="more-to-love-divider">
+                    <h3>More to love</h3>
+                </div>
+
+                <!-- Reuse product grid -->
+                <div class="product-grid" id="recommended-grid">
+                    <!-- Snapshot 2 Variant Cards -->
+                    <div class="product-card">
+                        <div class="product-img-wrapper">
+                            <img src="https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?auto=format&fit=crop&w=400&q=80" alt="Men's lightweight grey running sneakers with sporty white laces" class="product-img">
+                            <span class="badge badge-lightning">Sale</span>
+                            <div class="ad-tag">AD <i class="fa-solid fa-circle-info"></i></div>
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title"><span class="sr-only">Product Name: </span><a href="#">Men's Lightweight Running Sneakers</a></h3>
+                            <div class="product-price-row">
+                                <div class="price-row-wrap">
+                                    <span class="sr-only">Price: </span><span class="current-price">£1.16</span>
+                                    <span class="sales-stats">4.8K+ sold</span>
+                                </div>
+                                <button class="add-to-cart-btn add-cart-btn" aria-label="Add Men's Lightweight Running Sneakers to cart"><i class="fa-solid fa-cart-plus" aria-hidden="true"></i></button>
+                            </div>
+                            <div class="rrp-text">RRP £1.68 <i class="fa-regular fa-circle-question"></i></div>
+                            <div class="promo-tag">New Arrival <span class="tag-context">in Men's Footwear</span></div>
+                            <div class="product-rating">
+                                <div class="stars" aria-hidden="true">★★★★☆</div> <span>90</span>
+                            </div>
+                            <div class="brand-tag">Brand: FLOW RUNNERS</div>
+                        </div>
+                    </div>
+
+                    <div class="product-card">
+                        <div class="product-img-wrapper">
+                            <img src="https://images.unsplash.com/photo-1520639888713-7851133b1ed0?auto=format&fit=crop&w=400&q=80" alt="Classic brown premium leather casual boots with rugged soles" class="product-img">
+                            <span class="badge badge-choice">Sale</span>
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title"><span class="sr-only">Product Name: </span><a href="#">Classic Leather Casual Boots</a></h3>
+                            <div class="product-price-row">
+                                <div class="price-row-wrap">
+                                    <span class="sr-only">Price: </span><span class="current-price">£3.92</span>
+                                    <span class="sales-stats">9.3K+ sold</span>
+                                </div>
+                                <button class="add-to-cart-btn add-cart-btn" aria-label="Add Classic Leather Casual Boots to cart"><i class="fa-solid fa-cart-plus" aria-hidden="true"></i></button>
+                            </div>
+                            <div class="rrp-text">RRP £5.05 <i class="fa-regular fa-circle-question"></i></div>
+                            <div class="product-rating">
+                                <div class="stars" aria-hidden="true">★★★★★</div> <span>1,107</span>
+                            </div>
+                            <div class="brand-tag">Brand: PREMIUM LEATHER</div>
+                        </div>
+                    </div>
+
+                     <div class="product-card">
+                        <div class="product-img-wrapper">
+                            <img src="https://images.unsplash.com/photo-1608231387042-66d1773070a5?auto=format&fit=crop&w=400&q=80" alt="Men's everyday white classic sneakers with flat minimal design" class="product-img">
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title"><span class="sr-only">Product Name: </span><a href="#">Everyday White Classic Sneakers</a></h3>
+                            <div class="product-price-row">
+                                <div class="price-row-wrap">
+                                    <span class="sr-only">Price: </span><span class="current-price">£1.97</span>
+                                    <span class="sales-stats">8.5K+ sold</span>
+                                </div>
+                                <button class="add-to-cart-btn add-cart-btn" aria-label="Add Everyday White Classic Sneakers to cart"><i class="fa-solid fa-cart-plus" aria-hidden="true"></i></button>
+                            </div>
+                            <div class="rrp-text">RRP £2.09 <i class="fa-regular fa-circle-question"></i></div>
+                            <div class="promo-tag">Best-Selling Item <span class="tag-context">in Men's Footwear</span></div>
+                            <div class="product-rating">
+                                <div class="stars" aria-hidden="true">★★★★★</div> <span>506</span>
+                            </div>
+                            <div class="brand-tag badge-choice text-white" style="background-color: #6a1b9a; color: white;">Star seller</div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- Right Column: Order Summary (Sidebar) -->
+            <div class="order-summary-col">
+                <aside class="order-summary-box">
+                    <h2>Order Summary</h2>
+                    <div class="summary-details">
+                        <div class="summary-row">
+                            <span id="summary-item-count">Item total (1)</span>
+                            <span id="summary-item-total">$110.00</span>
+                        </div>
+                        <div class="summary-row">
+                            <span>Store discount</span>
+                            <span class="text-primary" id="summary-discount">-$73.20</span>
+                        </div>
+                    </div>
+                    
+                    <div class="summary-total-container">
+                        <div class="summary-total">
+                            <span class="total-label">Subtotal</span>
+                            <div class="total-price-box">
+                                <span class="currency">US $</span>
+                                <span class="total-price" id="summary-subtotal">36.80</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <p class="summary-tax-info">Price shown before tax. Free shipping triggered.</p>
+                    
+                    <a href="checkout.html" class="checkout-btn btn-primary" id="checkout-btn" style="text-align: center; text-decoration: none; justify-content: center;">Checkout (1)</a>
+                    
+                    <div class="express-checkout-divider">
+                        <hr>
+                        <span>Or</span>
+                    </div>
+
+                    <button class="paypal-btn" aria-label="Pay with PayPal">
+                        <span>Express checkout with </span> <strong>PayPal</strong>
+                    </button>
+
+                    <p class="crypto-note">All your personal information is protected and encrypted.</p>
+
+                    <div class="trust-guarantees">
+                        <div class="trust-item">
+                            <i class="fa-solid fa-shield-check text-green"></i> <strong>Safe payments</strong>
+                            <p>Your payment information is processed securely. We do not store credit card details.</p>
+                        </div>
+                        <div class="trust-item">
+                            <i class="fa-solid fa-box-open text-green"></i> <strong>Delivery Guarantee</strong>
+                            <p>Fast, reliable shipping directly to your doorstep. Tracked instantly.</p>
+                        </div>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </main>
+
+    <!-- Compact Footer -->
+    <footer class="site-footer">
+        <div class="container footer-grid">
+            <div class="footer-col">
+                <h2>Company Info</h2>
+                <ul>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Careers</a></li>
+                    <li><a href="#">Press</a></li>
+                    <li><a href="#">Investor Relations</a></li>
+                    <li><a href="#">Site Map</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h2>Customer Service</h2>
+                <ul>
+                    <li><a href="#">Help Center</a></li>
+                    <li><a href="#">Track Order</a></li>
+                    <li><a href="#">Returns & Refunds</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-col payment-col">
+                <h2 id="payment-heading">Secure Payments</h2>
+                <div class="payment-icons" aria-labelledby="payment-heading">
+                    <i class="fa-brands fa-cc-visa" aria-label="Visa"></i>
+                    <i class="fa-brands fa-cc-mastercard" aria-label="Mastercard"></i>
+                    <i class="fa-brands fa-cc-paypal" aria-label="PayPal"></i>
+                    <i class="fa-brands fa-cc-amex" aria-label="American Express"></i>
+                    <i class="fa-brands fa-cc-discover" aria-label="Discover"></i>
+                </div>
+            </div>
+            <div class="footer-col download-col">
+                <h2>Get the FlowCart App</h2>
+                <p>Scan the code or download from app stores</p>
+                <div class="app-buttons">
+                    <a href="#" class="app-btn"><i class="fa-brands fa-apple" aria-hidden="true"></i> App Store</a>
+                    <a href="#" class="app-btn"><i class="fa-brands fa-google-play" aria-hidden="true"></i> Google Play</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom container">
+            <p>&copy; 2026 FlowCart Inc. All Rights Reserved.</p>
+            <div class="social-links" aria-label="Social Media Links">
+                <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram" aria-hidden="true"></i></a>
+                <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook" aria-hidden="true"></i></a>
+                <a href="#" aria-label="Twitter"><i class="fa-brands fa-twitter" aria-hidden="true"></i></a>
+                <a href="#" aria-label="TikTok"><i class="fa-brands fa-tiktok" aria-hidden="true"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Summary Elements
+            const countText = document.getElementById('summary-item-count');
+            const itemTotalText = document.getElementById('summary-item-total');
+            const discountText = document.getElementById('summary-discount');
+            const subtotalText = document.getElementById('summary-subtotal');
+            const checkoutBtn = document.getElementById('checkout-btn');
+            const cartBadge = document.getElementById('cart-count');
+            const cartStoreBlock = document.querySelector('.cart-store-block');
+            
+            function updateCart() {
+                let totalItems = 0;
+                let subtotal = 0;
+                
+                const cartItems = document.querySelectorAll('.cart-item-card');
+                
+                cartItems.forEach(item => {
+                    const qtyInput = item.querySelector('.cart-item-qty');
+                    let qty = parseInt(qtyInput.value) || 0;
+                    totalItems += qty;
+                    
+                    const priceNode = item.querySelector('.current-price');
+                    if(priceNode) {
+                        // Stripping all currency symbols (£, $, etc) using regex
+                        let priceText = priceNode.innerText.replace(/[^0-9.]/g, '');
+                        let price = parseFloat(priceText) || 0;
+                        subtotal += (price * qty);
+                    }
+                });
+
+                // Apply logic where a standard relative discount mimics context
+                let mockDiscount = subtotal * 0.4; // 40% off base pricing assumption
+                let baseTotal = subtotal + mockDiscount;
+                
+                // Update DOM String formats
+                if(countText) countText.innerText = `Item total (${totalItems})`;
+                if(itemTotalText) itemTotalText.innerText = `$${baseTotal.toFixed(2)}`;
+                if(discountText) discountText.innerText = `-$${mockDiscount.toFixed(2)}`;
+                if(subtotalText) subtotalText.innerText = subtotal.toFixed(2);
+                if(checkoutBtn) checkoutBtn.innerText = `Checkout (${totalItems})`;
+                
+                if (cartBadge) {
+                    cartBadge.innerText = totalItems;
+                }
+            }
+
+            function syncCatalogBadge(title, delta) {
+                const cards = document.querySelectorAll('#recommended-grid .product-card');
+                cards.forEach(card => {
+                    const titleNode = card.querySelector('.product-title a');
+                    if(titleNode && titleNode.innerText.trim() === title.trim()) {
+                        let badge = card.querySelector('.cart-btn-badge');
+                        if(badge) {
+                            let val = parseInt(badge.innerText) + delta;
+                            if(val <= 0) badge.remove();
+                            else badge.innerText = val.toString();
+                        }
+                    }
+                });
+            }
+
+            // Centralized Event Listener for dynamic items (Quantity manipulation & deletion)
+            cartStoreBlock.addEventListener('click', (e) => {
+                const increaseBtn = e.target.closest('.btn-increase');
+                const decreaseBtn = e.target.closest('.btn-decrease');
+                const deleteBtn = e.target.closest('.delete-item-btn');
+                
+                if (increaseBtn) {
+                    const itemCard = increaseBtn.closest('.cart-item-card');
+                    const qtyInput = itemCard.querySelector('.cart-item-qty');
+                    qtyInput.value = parseInt(qtyInput.value) + 1;
+                    
+                    const title = itemCard.querySelector('.item-title').innerText.trim();
+                    syncCatalogBadge(title, 1);
+                    updateCart();
+                }
+                
+                if (decreaseBtn) {
+                    const itemCard = decreaseBtn.closest('.cart-item-card');
+                    const qtyInput = itemCard.querySelector('.cart-item-qty');
+                    const title = itemCard.querySelector('.item-title').innerText.trim();
+                    
+                    if (parseInt(qtyInput.value) > 1) {
+                        qtyInput.value = parseInt(qtyInput.value) - 1;
+                        syncCatalogBadge(title, -1);
+                        updateCart();
+                    } else {
+                        syncCatalogBadge(title, -1);
+                        itemCard.remove();
+                        updateCart();
+                    }
+                }
+                
+                if (deleteBtn) {
+                    const itemCard = deleteBtn.closest('.cart-item-card');
+                    if(itemCard) {
+                        const title = itemCard.querySelector('.item-title').innerText.trim();
+                        const qtyInput = itemCard.querySelector('.cart-item-qty');
+                        const qty = parseInt(qtyInput.value) || 1;
+                        
+                        syncCatalogBadge(title, -qty);
+                        itemCard.remove();
+                        updateCart();
+                    }
+                }
+            });
+
+            // WCAG 3.3.1 Error Validation
+            cartStoreBlock.addEventListener('input', (e) => {
+                if(e.target.classList.contains('cart-item-qty')) {
+                    const val = parseInt(e.target.value);
+                    const errorMsg = e.target.closest('.item-actions').querySelector('.qty-error');
+                    if (isNaN(val) || val < 1 || val > 99) {
+                        e.target.style.outline = '2px solid #d32f2f';
+                        e.target.setAttribute('aria-invalid', 'true');
+                        if(errorMsg) errorMsg.style.display = 'block';
+                    } else {
+                        e.target.style.outline = 'none';
+                        e.target.removeAttribute('aria-invalid');
+                        if(errorMsg) errorMsg.style.display = 'none';
+                        // Provide synced dynamic update
+                        updateCart();
+                    }
+                }
+            });
+
+            // "Add to Cart" logic for Recommended Items Grid
+            const addButtons = document.querySelectorAll('.add-to-cart-btn');
+            addButtons.forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    const card = e.target.closest('.product-card');
+                    if(!card) return;
+                    
+                    // Extract data
+                    const titleNode = card.querySelector('.product-title a');
+                    const title = titleNode ? titleNode.innerText : "New Item";
+                    
+                    const priceNode = card.querySelector('.current-price');
+                    const price = priceNode ? priceNode.innerText : "$0.00";
+                    
+                    const imageNode = card.querySelector('.product-img');
+                    const imgSrc = imageNode ? imageNode.src : "";
+                    
+                    // Create new Cart Item Node
+                    const newItem = document.createElement('div');
+                    newItem.className = 'cart-item-card';
+                    newItem.innerHTML = `
+                        <div class="item-selector">
+                            <label class="custom-checkbox">
+                                <input type="checkbox" checked aria-label="Select ${title}">
+                                <span class="checkmark"></span>
+                            </label>
+                        </div>
+                        <div class="item-img-box">
+                            <img src="${imgSrc}" alt="${title}">
+                        </div>
+                        <div class="item-details">
+                            <h4 class="item-title"><a href="#">${title}</a></h4>
+                            <p class="item-variants">Standard Variant</p>
+                            <p class="item-stock text-green">In Stock</p>
+                            <p class="item-shipping-info">Free shipping. Delivery by Apr 14-16.</p>
+                        </div>
+                        <div class="item-actions">
+                            <div class="item-price">
+                                <span class="current-price">${price}</span>
+                            </div>
+                            <div class="quantity-control-group">
+                                <div class="quantity-selector">
+                                    <button class="qty-btn btn-decrease" aria-label="Decrease quantity"><i class="fa-solid fa-minus" aria-hidden="true"></i></button>
+                                    <input type="text" class="cart-item-qty" value="1" aria-label="Quantity" readonly>
+                                    <button class="qty-btn btn-increase" aria-label="Increase quantity"><i class="fa-solid fa-plus" aria-hidden="true"></i></button>
+                                </div>
+                                <button class="delete-item-btn" aria-label="Remove item"><i class="fa-regular fa-trash-can" aria-hidden="true"></i></button>
+                            </div>
+                        </div>
+                    `;
+                    
+                    // Append immediately before the "More to love" section if applicable, or normally inside store block.
+                    cartStoreBlock.appendChild(newItem);
+                    
+                    // Recalculate
+                    updateCart();
+                    
+                    // Create or update the small orange badge seen in Snapshot 2
+                    let badge = btn.querySelector('.cart-btn-badge');
+                    if(!badge) {
+                        badge = document.createElement('span');
+                        badge.className = 'cart-btn-badge';
+                        badge.innerText = '1';
+                        btn.appendChild(badge);
+                    } else {
+                        badge.innerText = parseInt(badge.innerText) + 1;
+                    }
+
+                    // Optional slight visual pop animation when adding
+                    btn.style.transform = 'scale(1.1)';
+                    setTimeout(() => {
+                        btn.style.transform = '';
+                    }, 200);
+                });
+            });
+            
+            // Initialization run mapping baseline totals
+            updateCart();
+        });
+    </script>
+</body>
+</html>

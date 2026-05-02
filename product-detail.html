@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Details - FlowCart</title>
+    <meta name="description" content="Product details page for FlowCart.">
+    <!-- Google Fonts: Outfit for modern, premium look -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <a href="#main-content" class="sr-only sr-focusable">Skip to main content</a>
+
+    <!-- Top Announcement Bar -->
+    <div class="top-bar">
+        <div class="top-bar-container container">
+            <div class="top-bar-left">
+                <span class="perk"><i class="fa-solid fa-truck-fast" aria-hidden="true"></i> Free shipping</span>
+                <span class="perk"><i class="fa-solid fa-shield-check" aria-hidden="true"></i> Delivery guarantee</span>
+            </div>
+            <div class="top-bar-right">
+                <a href="#" class="top-link"><i class="fa-solid fa-mobile-screen" aria-hidden="true"></i> Get the APP</a>
+                <a href="#" class="top-link">Returns</a>
+                <button class="lang-currency" aria-label="Change language and currency settings">
+                    <img src="https://flagcdn.com/w20/us.png" alt="United States Flag" class="flag-icon"> 
+                    <span>English</span> / <span>USD</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Header -->
+    <header class="main-header">
+        <div class="header-container container">
+            <div class="logo">
+                <a href="index.html" aria-label="FlowCart Home">
+                    <h1>Flow<span>Cart</span></h1>
+                </a>
+            </div>
+
+            <div class="search-container">
+                <form class="search-form" id="search-form" aria-label="Product Search" action="index.html">
+                    <label for="search-input" class="sr-only">Search for products</label>
+                    <input type="text" id="search-input" placeholder="Search for lightning deals...">
+                    <button type="button" class="voice-search-btn" aria-label="Search by voice"><i class="fa-solid fa-microphone" aria-hidden="true"></i></button>
+                    <button type="submit" class="search-btn" aria-label="Submit Search"><i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i></button>
+                </form>
+            </div>
+
+            <div class="header-actions">
+                <a href="#" class="action-item">
+                    <i class="fa-regular fa-user" aria-hidden="true"></i>
+                    <div class="action-text">
+                        <span class="small-text">Sign In</span>
+                        <span class="main-text">Orders & Account</span>
+                    </div>
+                </a>
+                <a href="cart.html" class="action-item cart-action" aria-label="Shopping Cart">
+                    <div class="cart-icon-wrapper">
+                        <i class="fa-solid fa-cart-shopping" aria-hidden="true"></i>
+                        <span class="cart-badge" id="cart-count" aria-hidden="true">0</span>
+                        <span class="sr-only" aria-live="polite" id="cart-live-count">0 items in cart</span>
+                    </div>
+                    <span class="main-text">Cart</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation / Subheader -->
+    <nav class="sub-nav" aria-label="Main Categories">
+        <div class="container nav-container">
+            <ul class="nav-links">
+                <li><a href="index.html"><i class="fa-solid fa-bolt text-bolt" aria-hidden="true"></i> Lightning Deals</a></li>
+                <li><a href="index.html"><i class="fa-solid fa-tags text-tags" aria-hidden="true"></i> Clearance Deals</a></li>
+                <li><a href="index.html">Best Sellers</a></li>
+                <li><a href="index.html">Home & Garden</a></li>
+                <li><a href="index.html">Women's Clothing</a></li>
+                <li class="active"><a href="index.html" aria-current="page">Men's Clothing</a></li>
+                <li><a href="index.html">Electronics</a></li>
+                <li><a href="index.html">Jewelry</a></li>
+            </ul>
+        </div>
+    </nav>
+    
+    <!-- Breadcrumb Navigation -->
+    <nav aria-label="Breadcrumb" class="breadcrumb-container container">
+        <ol class="breadcrumb" id="breadcrumb-list">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="index.html">Men's Shoes</a></li>
+            <li><span aria-current="page" id="breadcrumb-current-product">Loading...</span></li>
+        </ol>
+    </nav>
+
+    <!-- Product Detail Section -->
+    <main id="main-content" class="product-detail-main container">
+        <div class="product-detail-grid">
+            
+            <!-- Left Column: Gallery -->
+            <div class="product-gallery">
+                <div class="main-image-container">
+                    <div id="detail-main-video" style="display: none; width: 100%; height: 100%; position: relative; z-index: 1;">
+                        <video style="width: 100%; height: 100%; object-fit: contain; border-radius: var(--radius-md); box-shadow: var(--shadow-sm); background-color: #000; aspect-ratio: 16/9;" autoplay muted controls loop>
+                            <source src="videoplayback.mp4" type="video/mp4">
+                            <track kind="captions" src="captions.vtt" srclang="en" label="English" default>
+                            Your browser does not support the video tag.
+                        </video>
+                        <div id="video-caption-overlay" style="display: none; position: absolute; bottom: 10%; left: 5%; right: 5%; background-color: rgba(0, 0, 0, 0.85); color: white; padding: 12px 16px; border-radius: 8px; font-size: 1.1rem; text-align: center; pointer-events: none; opacity: 0.95;">
+                            [Audio Description] 🔊 A detailed close-up of the rugged hiking boots. The high-traction sole grips firmly onto wet, mossy rocks as a stream flows rapidly by.
+                        </div>
+                    </div>
+                    <img id="detail-main-img" src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=400&q=80" alt="Men's waterproof red running and hiking shoes, side profile view" class="detail-main-img">
+                </div>
+                <div class="thumbnail-list" id="thumbnail-list">
+                    <!-- Thumbnails generated dynamically -->
+                </div>
+                
+                <div class="video-accessibility-options" style="margin-top: 16px; display: flex; flex-direction: column; gap: 8px;">
+                    <a href="#" class="filter-btn"><i class="fa-solid fa-hands-asl-interpreting"></i> Watch with Sign Language Interpreter</a>
+                    <button class="filter-btn" id="audio-desc-toggle" aria-pressed="false"><i class="fa-solid fa-audio-description"></i> Audio Description: OFF</button>
+                    <a href="#" class="filter-btn"><i class="fa-solid fa-ear-listen"></i> Watch extended audio described version</a>
+                    
+                    <details class="transcript-details" style="margin-top: 12px; background: white; padding: 16px; border-radius: 8px; border: 1px solid var(--border);">
+                        <summary style="font-weight: 600; cursor: pointer; color: var(--primary); font-size: 1.05rem;">Read full transcript</summary>
+                        <div class="transcript-container" style="margin-top: 16px;">
+                            <div class="transcript-search" style="margin-bottom: 24px;">
+                                <input type="text" placeholder="Search transcript" style="width: 100%; padding: 12px 18px; border-radius: 24px; border: none; background-color: #f2f2f2; font-size: 1rem; color: #333; outline: none;">
+                            </div>
+                            
+                            <div class="transcript-content" style="max-height: 350px; overflow-y: auto; padding-right: 8px;">
+                                <h3 style="font-size: 1.25rem; font-weight: 700; color: #000; margin-bottom: 16px; margin-top: 0;">Chapter 1: Intro</h3>
+                                
+                                <div class="transcript-row" data-start="0" data-end="8" style="display: flex; gap: 14px; margin-bottom: 18px;">
+                                    <span style="background-color: #f2f2f2; color: #444; padding: 3px 10px; border-radius: 12px; font-size: 0.85rem; font-weight: 500; height: fit-content; flex-shrink: 0; margin-top: 2px;">0:00</span>
+                                    <p style="margin: 0; color: #777; font-size: 1.05rem; line-height: 1.5; font-weight: 500;">in my hand I hold the most divisive running shoe of 2025 so far it has a familiar name but with a Twist the Nike</p>
+                                </div>
+                                
+                                <div class="transcript-row" data-start="8" data-end="15" style="display: flex; gap: 14px; margin-bottom: 18px;">
+                                    <span style="background-color: #f2f2f2; color: #444; padding: 3px 10px; border-radius: 12px; font-size: 0.85rem; font-weight: 500; height: fit-content; flex-shrink: 0; margin-top: 2px;">0:08</span>
+                                    <p style="margin: 0; color: #777; font-size: 1.05rem; line-height: 1.5; font-weight: 500;">Pegasus premium it's heavy expensive and looks weird nothing about it made me</p>
+                                </div>
+                                
+                                <div class="transcript-row" data-start="15" data-end="22" style="display: flex; gap: 14px; margin-bottom: 18px;">
+                                    <span style="background-color: #f2f2f2; color: #444; padding: 3px 10px; border-radius: 12px; font-size: 0.85rem; font-weight: 500; height: fit-content; flex-shrink: 0; margin-top: 2px;">0:15</span>
+                                    <p style="margin: 0; color: #777; font-size: 1.05rem; font-weight: 500; line-height: 1.5;">think that it would be a winner and then I tried it on here's our full</p>
+                                </div>
+                                
+                                <div class="transcript-row" data-start="22" data-end="999" style="display: flex; gap: 14px; margin-bottom: 28px;">
+                                    <span style="background-color: #f2f2f2; color: #444; padding: 3px 10px; border-radius: 12px; font-size: 0.85rem; font-weight: 500; height: fit-content; flex-shrink: 0; margin-top: 2px;">0:22</span>
+                                    <p style="margin: 0; color: #777; font-size: 1.05rem; line-height: 1.5; font-weight: 500;">review so first let's quickly situate this shoe inside of Nike's quickly changing universe so in 2025 they've</p>
+                                </div>
+                    
+                                <h3 style="font-size: 1.25rem; font-weight: 700; color: #000; margin-bottom: 16px;">Chapter 2: What's going on at Nike?</h3>
+                            </div>
+                        </div>
+                    </details>
+                </div>
+            </div>
+
+            <!-- Right Column: Info -->
+            <div class="product-info-wrap">
+                <div id="detail-badge-container"></div>
+                <h1 id="detail-title" class="detail-title">Loading Product...</h1>
+                
+                <div class="detail-rating" id="detail-rating">
+                    <div class="stars" aria-hidden="true">★★★★★</div>
+                    <span class="rating-val" id="detail-rating-val">4.8</span>
+                    <span class="review-count"> (<span id="detail-review-count">1450</span> Reviews)</span>
+                    <span class="sold-count">| 10k+ sold</span>
+                </div>
+
+                <div class="detail-price-box">
+                    <div class="price-main">
+                        <span class="currency">$</span>
+                        <span id="detail-price" class="current-price-lg">0.00</span>
+                    </div>
+                    <div class="price-secondary">
+                        <span id="detail-orig-price" class="original-price-lg">$0.00</span>
+                        <span class="discount-badge" id="detail-discount">-0%</span>
+                    </div>
+                    <p class="price-tax-info">Price shown before tax. Free shipping on orders over $10.</p>
+                </div>
+
+                <!-- Variations section typical of AliExpress / FlowCart -->
+                <div class="variations-section">
+                    <div class="variation-group">
+                        <h3 class="variation-label">Color: <span id="selected-color-name">Black</span></h3>
+                        <div class="color-options" aria-label="Color Selection" role="radiogroup">
+                            <button class="color-btn active" role="radio" aria-checked="true" aria-label="Black" style="background-color: #000;"></button>
+                            <button class="color-btn" role="radio" aria-checked="false" aria-label="White" style="background-color: #fff; border: 1px solid #ccc;"></button>
+                            <button class="color-btn" role="radio" aria-checked="false" aria-label="Grey" style="background-color: #888;"></button>
+                            <button class="color-btn" role="radio" aria-checked="false" aria-label="Navy Box" style="background-color: #0a1128;"></button>
+                        </div>
+                    </div>
+
+                    <div class="variation-group">
+                        <div class="size-header">
+                            <h3 class="variation-label">Size (EU): <span id="selected-size-name">42</span></h3>
+                            <a href="#" class="size-guide-link"><i class="fa-solid fa-ruler-horizontal"></i> Size Guide</a>
+                        </div>
+                        <div class="size-options" aria-label="Size Selection" role="radiogroup">
+                            <button class="size-btn" role="radio" aria-checked="false">39</button>
+                            <button class="size-btn" role="radio" aria-checked="false">40</button>
+                            <button class="size-btn" role="radio" aria-checked="false">41</button>
+                            <button class="size-btn active" role="radio" aria-checked="true">42</button>
+                            <button class="size-btn" role="radio" aria-checked="false">43</button>
+                            <button class="size-btn" role="radio" aria-checked="false">44</button>
+                            <button class="size-btn" role="radio" aria-checked="false">45</button>
+                        </div>
+                    </div>
+
+                    <div class="variation-group">
+                        <h3 class="variation-label">Quantity:</h3>
+                        <div class="quantity-selector">
+                            <button class="qty-btn" id="qty-minus" aria-label="Decrease quantity"><i class="fa-solid fa-minus"></i></button>
+                            <input type="number" id="qty-input" value="1" min="1" max="99" aria-label="Quantity">
+                            <button class="qty-btn" id="qty-plus" aria-label="Increase quantity"><i class="fa-solid fa-plus"></i></button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="action-buttons">
+                    <button class="btn-add-cart-large" id="btn-add-cart-large"><i class="fa-solid fa-cart-plus"></i> Add to Cart</button>
+                    <button class="btn-buy-now" id="btn-buy-now">Buy Now</button>
+                </div>
+
+                <div class="guarantees">
+                    <div class="guarantee-item">
+                        <i class="fa-solid fa-shield-halved"></i>
+                        <div class="guarantee-text">
+                            <strong>Security & Privacy</strong>
+                            <p>Safe payments & encryption</p>
+                        </div>
+                    </div>
+                    <div class="guarantee-item">
+                        <i class="fa-solid fa-box-open"></i>
+                        <div class="guarantee-text">
+                            <strong>Delivery Guarantee</strong>
+                            <p>Delivery tracking provided</p>
+                        </div>
+                    </div>
+                    <div class="guarantee-item">
+                        <i class="fa-solid fa-rotate-left"></i>
+                        <div class="guarantee-text">
+                            <strong>Free Returns</strong>
+                            <p>Within 90 days</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Details Tab Section -->
+        <div class="product-description-tabs">
+            <div class="tabs-header" role="tablist">
+                <button role="tab" class="tab-btn active" aria-selected="true" aria-controls="tab-description">Item Description</button>
+                <button role="tab" class="tab-btn" aria-selected="false">Reviews (1450)</button>
+                <button role="tab" class="tab-btn" aria-selected="false">Specs</button>
+            </div>
+            <div class="tab-content" id="tab-description">
+                <h2>About this item</h2>
+                <ul class="spec-list">
+                    <li><strong>Upper Material:</strong> Breathable Mesh</li>
+                    <li><strong>Outsole Material:</strong> Non-slip Rubber</li>
+                    <li><strong>Insole Material:</strong> Memory Foam</li>
+                    <li><strong>Closure Type:</strong> Lace-up</li>
+                    <li><strong>Season:</strong> Spring/Autumn/Summer</li>
+                    <li><strong>Occasion:</strong> Sports, Running, Casual Daily Wear</li>
+                </ul>
+                <p>These premium men's shoes offer ultimate comfort and durability for all-day wear. The breathable mesh upper ensures proper ventilation, whilst the memory foam insole provides dynamic shock absorption. Perfect for running, training, or casual occasions.</p>
+                <!-- Multiple detailed images can go here -->
+                <div class="detail-long-images">
+                    <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=800&q=80" alt="Nike running shoe in red, front view" id="desc-img-1">
+                    <img src="https://images.unsplash.com/photo-1608231387042-66d1773070a5?auto=format&fit=crop&w=800&q=80" alt="Puma white leather sneaker, side profile" id="desc-img-2">
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Compact Footer -->
+    <footer class="site-footer">
+        <div class="container footer-grid">
+            <div class="footer-col">
+                <h2>Company Info</h2>
+                <ul>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Careers</a></li>
+                    <li><a href="#">Press</a></li>
+                    <li><a href="#">Investor Relations</a></li>
+                    <li><a href="#">Site Map</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h2>Customer Service</h2>
+                <ul>
+                    <li><a href="#">Help Center</a></li>
+                    <li><a href="#">Track Order</a></li>
+                    <li><a href="#">Returns & Refunds</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-col payment-col">
+                <h2 id="payment-heading">Secure Payments</h2>
+                <div class="payment-icons" aria-labelledby="payment-heading">
+                    <i class="fa-brands fa-cc-visa" aria-label="Visa"></i>
+                    <i class="fa-brands fa-cc-mastercard" aria-label="Mastercard"></i>
+                    <i class="fa-brands fa-cc-paypal" aria-label="PayPal"></i>
+                    <i class="fa-brands fa-cc-amex" aria-label="American Express"></i>
+                    <i class="fa-brands fa-cc-discover" aria-label="Discover"></i>
+                </div>
+            </div>
+            <div class="footer-col download-col">
+                <h2>Get the FlowCart App</h2>
+                <p>Scan the code or download from app stores</p>
+                <div class="app-buttons">
+                    <a href="#" class="app-btn"><i class="fa-brands fa-apple" aria-hidden="true"></i> App Store</a>
+                    <a href="#" class="app-btn"><i class="fa-brands fa-google-play" aria-hidden="true"></i> Google Play</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom container">
+            <p>&copy; 2026 FlowCart Inc. All Rights Reserved.</p>
+            <div class="social-links" aria-label="Social Media Links">
+                <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram" aria-hidden="true"></i></a>
+                <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook" aria-hidden="true"></i></a>
+                <a href="#" aria-label="Twitter"><i class="fa-brands fa-twitter" aria-hidden="true"></i></a>
+                <a href="#" aria-label="TikTok"><i class="fa-brands fa-tiktok" aria-hidden="true"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/data.js"></script>
+    <script src="js/product.js"></script>
+</body>
+</html>

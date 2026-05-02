@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FlowCart - Your Ultimate Shopping Destination</title>
+    <meta name="description" content="Shop amazing lightning deals and clearance items at FlowCart. Free shipping and delivery guarantees.">
+    <!-- Google Fonts: Outfit for modern, premium look -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <a href="#main-content" class="sr-only sr-focusable">Skip to main content</a>
+
+    <!-- Top Announcement Bar -->
+    <div class="top-bar">
+        <div class="top-bar-container container">
+            <div class="top-bar-left">
+                <span class="perk"><i class="fa-solid fa-truck-fast" aria-hidden="true"></i> Free shipping</span>
+                <span class="perk"><i class="fa-solid fa-shield-check" aria-hidden="true"></i> Delivery guarantee</span>
+            </div>
+            <div class="top-bar-right">
+                <a href="#" class="top-link"><i class="fa-solid fa-mobile-screen" aria-hidden="true"></i> Get the APP</a>
+                <a href="#" class="top-link">Returns</a>
+                <button class="lang-currency" aria-label="Change language and currency settings">
+                    <img src="https://flagcdn.com/w20/us.png" alt="United States Flag" class="flag-icon"> 
+                    <span>English</span> / <span>USD</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Header -->
+    <header class="main-header">
+        <div class="header-container container">
+            <div class="logo">
+                <a href="#" aria-label="FlowCart Home">
+                    <h1>Flow<span>Cart</span></h1>
+                </a>
+            </div>
+
+            <div class="search-container">
+                <!-- 2.4.6: Descriptive Search Label -->
+                <form class="search-form" id="search-form" aria-label="Product Search">
+                    <label for="search-input" class="sr-only">Search for products</label>
+                    <input type="text" id="search-input" placeholder="Search for lightning deals...">
+                    <!-- 2.5.6 Voice search available alongside keyboard -->
+                    <button type="button" class="voice-search-btn" aria-label="Search by voice"><i class="fa-solid fa-microphone" aria-hidden="true"></i></button>
+                    <button type="submit" class="search-btn" aria-label="Submit Search"><i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i></button>
+                </form>
+            </div>
+
+            <div class="header-actions">
+                <a href="#" class="action-item">
+                    <i class="fa-regular fa-user" aria-hidden="true"></i>
+                    <div class="action-text">
+                        <span class="small-text">Sign In</span>
+                        <span class="main-text">Orders & Account</span>
+                    </div>
+                </a>
+                <a href="cart.html" class="action-item cart-action" aria-label="Shopping Cart">
+                    <div class="cart-icon-wrapper">
+                        <i class="fa-solid fa-cart-shopping" aria-hidden="true"></i>
+                        <span class="cart-badge" id="cart-count" aria-hidden="true">0</span>
+                        <span class="sr-only" aria-live="polite" id="cart-live-count">0 items in cart</span>
+                    </div>
+                    <span class="main-text">Cart</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation / Subheader -->
+    <nav class="sub-nav" aria-label="Main Categories">
+        <div class="container nav-container">
+            <ul class="nav-links">
+                <li class="active"><a href="#" aria-current="page"><i class="fa-solid fa-bolt text-bolt" aria-hidden="true"></i> Lightning Deals</a></li>
+                <li><a href="#"><i class="fa-solid fa-tags text-tags" aria-hidden="true"></i> Clearance Deals</a></li>
+                <li><a href="#">Best Sellers</a></li>
+                <li><a href="#">Home & Garden</a></li>
+                <li><a href="#">Women's Clothing</a></li>
+                <li><a href="#">Men's Clothing</a></li>
+                <li><a href="#">Electronics</a></li>
+                <li><a href="#">Jewelry</a></li>
+            </ul>
+        </div>
+    </nav>
+    
+    <!-- 2.4.8 Breadcrumb Navigation -->
+    <nav aria-label="Breadcrumb" class="breadcrumb-container container">
+        <ol class="breadcrumb" id="breadcrumb-list">
+            <li><a href="#" id="breadcrumb-home">Home</a></li>
+            <li><span aria-current="page" id="breadcrumb-current">All Categories</span></li>
+        </ol>
+    </nav>
+
+    <!-- Promotion Banner -->
+    <!-- 1.4.6 High contrast blue used in styles.css -->
+    <section aria-labelledby="promo-heading" class="promo-banner container" id="promo-banner-section">
+        <div class="banner-content">
+            <h2 id="promo-heading">FLOWCART x DELIVERY PRO</h2>
+            <p>Together for better, faster delivery.</p>
+            <!-- 2.4.4 Descriptive Link Text & 1.4.11 Non-text contrast bordered button -->
+            <a href="#" class="banner-btn" aria-label="Shop now for Delivery Pro promotional products">Shop Now <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+        </div>
+    </section>
+
+    <!-- Categories Pills -->
+    <section aria-labelledby="explore-heading" class="category-pills container" id="category-pills-section">
+        <!-- 2.4.10 Proper Header Structure H2 -->
+        <h2 id="explore-heading" class="section-title">Explore Your Interests <span class="sparkles" aria-hidden="true">✨</span></h2>
+        <div class="pills-container" id="pills-container" role="tablist" aria-label="Filter categories">
+            <button role="tab" aria-selected="true" class="pill active">All Categories</button>
+            <button role="tab" aria-selected="false" class="pill">Men's Shoes</button>
+            <button role="tab" aria-selected="false" class="pill">Electronics</button>
+            <button role="tab" aria-selected="false" class="pill">Sports & Outdoors</button>
+            <button role="tab" aria-selected="false" class="pill">Home Decor</button>
+            <button role="tab" aria-selected="false" class="pill">Women's Fashion</button>
+            <button role="tab" aria-selected="false" class="pill">Smart Watches</button>
+            <button role="tab" aria-selected="false" class="pill">Audio</button>
+            <button role="tab" aria-selected="false" class="pill">Bags & Luggage</button>
+        </div>
+    </section>
+
+    <!-- Men's Shoes View (Initially Hidden) -->
+    <div id="mens-shoes-view" class="container" style="display: none; margin-bottom: 40px;">
+        <!-- Circular Subcategories -->
+        <div class="sub-categories">
+            <a href="#" class="sub-cat-item">
+                <div class="sub-cat-img-wrapper"><img src="https://images.unsplash.com/photo-1560769629-975ec94e6a86?auto=format&fit=crop&w=150&q=80" alt="Pair of brown suede men's casual slip-on shoes on a tiled surface" class="sub-cat-img"></div>
+                <span class="sub-cat-name">Men's casual shoes</span>
+            </a>
+            <a href="#" class="sub-cat-item">
+                <div class="sub-cat-img-wrapper"><img src="https://images.unsplash.com/photo-1608231387042-66d1773070a5?auto=format&fit=crop&w=150&q=80" alt="White athletic running shoes with breathable mesh" class="sub-cat-img"></div>
+                <span class="sub-cat-name">Men's running shoes</span>
+            </a>
+            <a href="#" class="sub-cat-item">
+                <div class="sub-cat-img-wrapper"><img src="https://images.unsplash.com/photo-1525966222134-fcfa99b8ae77?auto=format&fit=crop&w=150&q=80" alt="Polished brown leather men's formal dress shoes" class="sub-cat-img"></div>
+                <span class="sub-cat-name">Men's Dress Shoes</span>
+            </a>
+            <a href="#" class="sub-cat-item">
+                <div class="sub-cat-img-wrapper"><img src="https://images.unsplash.com/photo-1520639888713-7851133b1ed0?auto=format&fit=crop&w=150&q=80" alt="Rugged brown premium leather casual boots" class="sub-cat-img"></div>
+                <span class="sub-cat-name">Men's boots</span>
+            </a>
+            <a href="#" class="sub-cat-item">
+                <div class="sub-cat-img-wrapper"><img src="https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?auto=format&fit=crop&w=150&q=80" alt="Men's sneakers" class="sub-cat-img"></div>
+                <span class="sub-cat-name">Men's sneakers</span>
+            </a>
+            <a href="#" class="sub-cat-item">
+                <div class="sub-cat-img-wrapper"><img src="https://images.unsplash.com/photo-1603487742131-4160ec999306?auto=format&fit=crop&w=150&q=80" alt="Men's loafers" class="sub-cat-img"></div>
+                <span class="sub-cat-name">Men's loafers</span>
+            </a>
+            <a href="#" class="sub-cat-item">
+                <div class="sub-cat-img-wrapper"><img src="https://images.unsplash.com/photo-1551107696-a4b0c5a0d9a2?auto=format&fit=crop&w=150&q=80" alt="Men's oxfords" class="sub-cat-img"></div>
+                <span class="sub-cat-name">Men's oxfords</span>
+            </a>
+            <a href="#" class="sub-cat-item">
+                <div class="sub-cat-img-wrapper"><img src="https://images.unsplash.com/photo-1491553895911-0055eca6402d?auto=format&fit=crop&w=150&q=80" alt="Men's slip-ons" class="sub-cat-img"></div>
+                <span class="sub-cat-name">Men's slip-ons</span>
+            </a>
+        </div>
+
+        <!-- Sort By Bar -->
+        <div class="sort-by-bar">
+            <div class="sort-left">
+                <span class="sort-label">Sort by:</span>
+                <button class="sort-btn active" aria-pressed="true">Best Match</button>
+                <button class="sort-btn" aria-pressed="false">Orders</button>
+                <button class="sort-btn" aria-pressed="false">New Arrivals</button>
+                <button class="sort-btn" aria-pressed="false">Price <i class="fa-solid fa-sort" aria-hidden="true"></i></button>
+            </div>
+            <div class="sort-right">
+                <button class="filter-btn"><i class="fa-solid fa-filter" aria-hidden="true"></i> View Filters</button>
+                <!-- 3.2.5 Filters apply only after confirmation -->
+                <button class="apply-filters-btn btn-primary" id="apply-mens-filters-btn">Apply Filters</button>
+            </div>
+        </div>
+
+        <!-- Mens Product Grid -->
+        <div class="product-grid" id="mens-product-grid">
+            <!-- Products will be injected here via JavaScript -->
+        </div>
+
+        <div class="load-more-container">
+            <button id="mens-load-more-btn" class="btn-primary">See More <span class="sr-only">men's shoes products</span><i class="fa-solid fa-chevron-down" aria-hidden="true"></i></button>
+        </div>
+    </div>
+
+    <!-- Product Grid Section -->
+    <main id="main-content" class="main-content container">
+        <div class="product-grid" id="product-grid">
+            <!-- Products will be injected here via JavaScript -->
+        </div>
+        
+        <div class="load-more-container">
+            <button id="load-more-btn" class="btn-primary">See More <span class="sr-only">products</span><i class="fa-solid fa-chevron-down" aria-hidden="true"></i></button>
+        </div>
+    </main>
+
+    <!-- Compact Footer -->
+    <!-- 2.4.10 Restructured headings inside footer to H2 -->
+    <footer class="site-footer">
+        <div class="container footer-grid">
+            <div class="footer-col">
+                <h2>Company Info</h2>
+                <ul>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Careers</a></li>
+                    <li><a href="#">Press</a></li>
+                    <li><a href="#">Investor Relations</a></li>
+                    <li><a href="#">Site Map</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h2>Customer Service</h2>
+                <ul>
+                    <li><a href="#">Help Center</a></li>
+                    <li><a href="#">Track Order</a></li>
+                    <li><a href="#">Returns & Refunds</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-col payment-col">
+                <h2 id="payment-heading">Secure Payments</h2>
+                <div class="payment-icons" aria-labelledby="payment-heading">
+                    <i class="fa-brands fa-cc-visa" aria-label="Visa"></i>
+                    <i class="fa-brands fa-cc-mastercard" aria-label="Mastercard"></i>
+                    <i class="fa-brands fa-cc-paypal" aria-label="PayPal"></i>
+                    <i class="fa-brands fa-cc-amex" aria-label="American Express"></i>
+                    <i class="fa-brands fa-cc-discover" aria-label="Discover"></i>
+                </div>
+            </div>
+            <div class="footer-col download-col">
+                <h2>Get the FlowCart App</h2>
+                <p>Scan the code or download from app stores</p>
+                <div class="app-buttons">
+                    <a href="#" class="app-btn"><i class="fa-brands fa-apple" aria-hidden="true"></i> App Store</a>
+                    <a href="#" class="app-btn"><i class="fa-brands fa-google-play" aria-hidden="true"></i> Google Play</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom container">
+            <p>&copy; 2026 FlowCart Inc. All Rights Reserved.</p>
+            <div class="social-links" aria-label="Social Media Links">
+                <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram" aria-hidden="true"></i></a>
+                <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook" aria-hidden="true"></i></a>
+                <a href="#" aria-label="Twitter"><i class="fa-brands fa-twitter" aria-hidden="true"></i></a>
+                <a href="#" aria-label="TikTok"><i class="fa-brands fa-tiktok" aria-hidden="true"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/data.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
